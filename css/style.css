@@ -830,6 +830,11 @@ body {
         padding-right: 1rem !important;
     }
     
+    /* About section - 28 Godina badge margin on mobile */
+    .about-experience-badge {
+        margin-right: 1rem !important;
+    }
+    
     /* Contact section mobile fixes */
     #contact .d-flex.gap-3 {
         flex-direction: row !important;
