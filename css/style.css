@@ -1,0 +1,794 @@
+/********** Template CSS **********/
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+#about, #service, #why-choose-us, #contact {
+    scroll-margin-top: 100px;
+}
+
+:root {
+    --primary: #D81324;
+    --secondary: #0B2154;
+    --light: #F2F2F2;
+    --dark: #111111;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+@media (max-width: 991.98px) {
+    .back-to-top {
+        right: 20px !important;
+        bottom: 20px !important;
+        left: auto !important;
+        width: 50px !important;
+        height: 50px !important;
+        position: fixed !important;
+        transform: none !important;
+    }
+    
+    .navbar-toggler {
+        position: relative !important;
+        right: 0 !important;
+        left: auto !important;
+        margin-right: 1rem !important;
+        padding: 0.25rem 0.5rem !important;
+        transform: none !important;
+    }
+    
+    .navbar {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    
+    .navbar-brand {
+        margin-left: 1rem !important;
+    }
+    
+    .container,
+    .container-fluid,
+    .container-xxl {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    [class*="col-"] {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Remove extra padding from sections on mobile */
+    #about,
+    #service,
+    #team,
+    #contact {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    #about .container,
+    #service .container,
+    #team .container,
+    #contact .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+/* Social media buttons square - only on mobile */
+@media (max-width: 991.98px) {
+    .navbar .btn-sm-square,
+    .navbar .btn.btn-sm-square,
+    .navbar a.btn-sm-square {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+    }
+    
+    /* Navbar on mobile over hero */
+    .navbar {
+        padding: 1rem 0 !important;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1050 !important;
+        width: 100%;
+    }
+    
+    /* Set navbar height variable for hero calculation */
+    :root {
+        --navbar-height: 70px;
+    }
+    
+    body {
+        padding-top: 0;
+    }
+    
+    .navbar-brand {
+        padding: 0.5rem 1rem !important;
+    }
+    
+    .navbar-nav {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+    
+    /* Hero section fullscreen below 992px - accounting for navbar */
+    #home {
+        height: calc(100vh - var(--navbar-height, 70px));
+        margin-bottom: 0 !important;
+        margin-top: var(--navbar-height, 70px);
+    }
+    
+    #home > div {
+        height: 100%;
+    }
+    
+    #home img {
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Darken hero image overlay to 90% on mobile */
+    #home .bg-dark {
+        opacity: 0.9 !important;
+    }
+    
+    #home .car-headlights-wrapper {
+        margin-top: 10px;
+        max-width: 100%;
+        justify-content: center;
+    }
+    
+    #home .car-headlights-wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    #home .display-3 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Bring text closer to car on mobile */
+    #home .col-10.col-lg-7 {
+        margin-bottom: 0.5rem;
+        margin-top: 20%;
+    }
+    
+    #home h6.text-uppercase {
+        margin-bottom: 1rem !important;
+    }
+    
+    #home .row {
+        min-height: calc(100vh - var(--navbar-height, 70px));
+    }
+}
+
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Hero Section ***/
+#home {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+#home .container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100%;
+}
+
+#home > div {
+    width: 100%;
+    height: 100%;
+}
+
+#home > div > img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#home .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 992px) {
+    #home {
+        height: 100vh;
+        min-height: 100vh;
+    }
+    
+    #home > div {
+        height: 100vh;
+    }
+    
+    #home > div > img {
+        height: 100vh !important;
+        min-height: 100vh;
+    }
+}
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* Hero section fullscreen below 992px - accounting for navbar */
+    #home {
+        height: calc(100vh - var(--navbar-height, 70px)) !important;
+        min-height: calc(100vh - var(--navbar-height, 70px)) !important;
+        margin-bottom: 0 !important;
+        margin-top: var(--navbar-height, 70px) !important;
+    }
+    
+    #home .container-fluid {
+        height: 100% !important;
+    }
+    
+    #home > div {
+        height: 100% !important;
+    }
+    
+    #home img {
+        height: 100% !important;
+        min-height: 100% !important;
+        object-fit: cover;
+    }
+    
+    /* Darken hero image overlay to 90% on mobile */
+    #home .bg-dark {
+        opacity: 0.9 !important;
+    }
+    
+    #home .car-headlights-wrapper {
+        margin-top: 20px;
+        max-width: 100%;
+        justify-content: center;
+    }
+    
+    #home .car-headlights-wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    #home .display-3 {
+        font-size: 2rem !important;
+    }
+    
+    #home .row {
+        min-height: calc(100vh - var(--navbar-height, 70px));
+    }
+}
+
+.page-header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header-inner {
+    background: rgba(0, 0, 0, .7);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Service ***/
+.service .nav .nav-link {
+    background: var(--light);
+    transition: .5s;
+}
+
+.service .nav .nav-link.active {
+    background: var(--primary);
+}
+
+.service .nav .nav-link.active h4 {
+    color: #FFFFFF !important;
+}
+
+
+/*** Team ***/
+.team-item .team-overlay {
+    display: none;
+}
+
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/carousel-bg-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+/*** Car Headlights Animation ***/
+.car-headlights-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.car-headlights-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.headlight {
+    position: absolute;
+    width: 65px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5);
+    filter: blur(1px);
+    pointer-events: none;
+    z-index: 10;
+    animation: headlights-blink 2s ease-in-out infinite;
+    border: none;
+    outline: none;
+}
+
+.headlight-left {
+    top: 52%;
+    left: 9%;
+    transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.headlight-right {
+    top: 54%;
+    right: 11%;
+    transform: translate(50%, -50%) rotate(-35deg);
+}
+
+@keyframes headlights-blink {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) rotate(35deg) scale(0.8);
+        filter: blur(1px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(35deg) scale(1.2);
+        filter: blur(0.5px);
+    }
+}
+
+.headlight-right {
+    animation: headlights-blink-right 2s ease-in-out infinite;
+}
+
+@keyframes headlights-blink-right {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(50%, -50%) rotate(-35deg) scale(0.8);
+        filter: blur(1px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(50%, -50%) rotate(-35deg) scale(1.2);
+        filter: blur(0.5px);
+    }
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 991.98px) {
+    /* Prevent horizontal overflow */
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+    
+    /* Hero section - ensure full width and no padding */
+    #home {
+        padding: 0 !important;
+        margin-top: var(--navbar-height, 70px) !important;
+        margin-bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: calc(100vh - var(--navbar-height, 70px)) !important;
+        min-height: calc(100vh - var(--navbar-height, 70px)) !important;
+    }
+    
+    #home .container-fluid {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    #home > div {
+        height: 100% !important;
+    }
+    
+    #home > div > img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    /* Fix section padding */
+    #about,
+    #service,
+    #team,
+    #contact {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    #about .container,
+    #service .container,
+    #team .container,
+    #contact .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Contact section mobile fixes */
+    #contact .d-flex.gap-3 {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1.5rem !important;
+        min-height: auto !important;
+    }
+    
+    #contact .btn-lg {
+        width: 120px !important;
+        height: 120px !important;
+        max-width: 120px !important;
+    }
+    
+    #contact .btn-lg[style*="width"] {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    #contact .btn-lg i {
+        font-size: 2.5rem !important;
+    }
+    
+    #contact .btn-lg i[style*="font-size"] {
+        font-size: 2.5rem !important;
+    }
+    
+    #contact .btn-lg span {
+        font-size: 0.9rem !important;
+    }
+    
+    #contact .btn-lg span[style*="font-size"] {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Service tabs mobile */
+    .service .nav {
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Contact info boxes mobile spacing */
+    #contact .col-md-6 {
+        margin-bottom: 1rem;
+    }
+    
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Fix iframe in contact */
+    #contact iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 575.98px) {
+    .container,
+    .container-fluid,
+    .container-xxl {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    #contact .btn-lg {
+        width: 100px !important;
+        height: 100px !important;
+        max-width: 100px !important;
+    }
+    
+    #contact .btn-lg[style*="width"] {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    #contact .btn-lg i {
+        font-size: 2rem !important;
+    }
+    
+    #contact .btn-lg i[style*="font-size"] {
+        font-size: 2rem !important;
+    }
+    
+    #contact .btn-lg span {
+        font-size: 0.85rem !important;
+    }
+    
+    #contact .btn-lg span[style*="font-size"] {
+        font-size: 0.85rem !important;
+    }
+    
+    /* Reduce padding in sections */
+    #about .container,
+    #service .container,
+    #team .container,
+    #contact .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}

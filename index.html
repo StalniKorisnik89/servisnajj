@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="utf-8">
+    <title>NAJJ 1996 - Auto Servis</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Učitavanje...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-7 px-5 text-start d-flex align-items-center">
+                <div class="d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small><a href="https://www.google.com/maps/search/?api=1&query=ĐAKONA+AVAKUMA+6,+32102,+ČAČAK,+Srbija" target="_blank" style="color: inherit; text-decoration: none;">ĐAKONA AVAKUMA 6, 32102, ČAČAK, Srbija</a></small>
+                </div>
+                <div class="d-flex flex-column py-3">
+                    <div class="d-inline-flex align-items-center mb-1">
+                        <small class="far fa-clock text-primary me-2"></small>
+                        <small>Pon - Pet: 09:00 - 18:00</small>
+                    </div>
+                    <div class="d-inline-flex align-items-center">
+                        <small class="far fa-clock text-primary me-2"></small>
+                        <small>Sub: 09:00 - 15:00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small><a href="tel:069717538" style="color: inherit; text-decoration: none;">069717538</a></small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0" id="mainNavbar">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-car me-3"></i>NAJJ 1996</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="#home" class="nav-item nav-link active">Početna</a>
+                <a href="#about" class="nav-item nav-link">O nama</a>
+                <a href="#service" class="nav-item nav-link">Usluge</a>
+                <a href="#why-choose-us" class="nav-item nav-link">Zašto izabrati nas</a>
+                <a href="#contact" class="nav-item nav-link">Kontakt</a>
+            </div>
+            <div class="d-lg-none px-4 pb-3">
+                <div class="border-top pt-3 mt-3">
+                    <div class="mb-2">
+                        <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                        <small><a href="https://www.google.com/maps/search/?api=1&query=ĐAKONA+AVAKUMA+6,+32102,+ČAČAK,+Srbija" target="_blank" style="color: inherit; text-decoration: none;">ĐAKONA AVAKUMA 6, 32102, ČAČAK, Srbija</a></small>
+                    </div>
+                    <div class="mb-2">
+                        <small class="far fa-clock text-primary me-2"></small>
+                        <small>Pon - Pet: 09:00 - 18:00</small>
+                    </div>
+                    <div class="mb-2">
+                        <small class="far fa-clock text-primary me-2"></small>
+                        <small>Sub: 09:00 - 15:00</small>
+                    </div>
+                    <div class="mb-2">
+                        <small class="fa fa-phone-alt text-primary me-2"></small>
+                        <small><a href="tel:069717538" style="color: inherit; text-decoration: none;">069717538</a></small>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                        <a class="btn btn-sm-square bg-primary text-white me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square bg-primary text-white me-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm-square bg-primary text-white me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm-square bg-primary text-white me-0" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div id="home" class="container-fluid p-0 m-0" style="position: relative; z-index: 1; width: 100%;">
+        <div class="position-relative w-100">
+            <img class="w-100" src="img/carousel-bg-1.jpg" alt="Image" style="object-fit: cover;">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.4; z-index: 1;"></div>
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="z-index: 2;">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center justify-content-lg-start">
+                        <div class="col-10 col-lg-7 text-center text-lg-start">
+                            <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Auto Servis Najj //</h6>
+                            <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Profesionalna nega za svaki automobil</h1>
+                        </div>
+                        <div class="col-lg-5 d-flex animated zoomIn">
+                            <div class="car-headlights-wrapper position-relative">
+                                <img class="img-fluid" src="img/carousel-1.png" alt="">
+                                <span class="headlight headlight-left"></span>
+                                <span class="headlight headlight-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- About Start -->
+    <div id="about" class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 pt-4" style="min-height: 400px;">
+                    <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
+                        <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5" style="background: rgba(0, 0, 0, .5);">
+                            <h1 class="display-4 text-white mb-0">28 <span class="fs-4">Godina</span></h1>
+                            <h4 class="text-white">Iskustva</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h6 class="text-primary text-uppercase">// O nama //</h6>
+                    <h1 class="mb-4"><span class="text-primary">NAJJ 1996</span> - Vaš Pouzdan Partner</h1>
+                    <p class="mb-4">NAJJ 1996 je auto servis sa dugogodišnjom tradicijom koja počinje još 1996. godine. Tokom preko 28 godina uspešnog rada, stekli smo reputaciju pouzdanog i profesionalnog partnera za sve vaše potrebe vezane za održavanje i popravku automobila. Naš tim iskusnih mehaničara koristi najsavremeniju opremu i originalne delove kako bismo vam garantovali kvalitet i sigurnost u svakom koraku.</p>
+                    <div class="row g-4 mb-3 pb-3">
+                        <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="d-flex">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                    <span class="fw-bold text-secondary">01</span>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Dugogodišnje Iskustvo</h6>
+                                    <span>Više od 28 godina uspešnog rada i zadovoljnih klijenata u Čačku i šire</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="d-flex">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                    <span class="fw-bold text-secondary">02</span>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Stručni Tim Mehaničara</h6>
+                                    <span>Naš tim čine iskusni i sertifikovani mehaničari koji poznaju sve marke vozila</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="d-flex">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                    <span class="fw-bold text-secondary">03</span>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Kvalitet i Pouzdanost</h6>
+                                    <span>Koristimo najsavremeniju dijagnostičku opremu i garantujemo kvalitet svih usluga</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div id="service" class="container-xxl service py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">// Naše Usluge //</h6>
+                <h1 class="mb-5">Istražite Naše Usluge</h1>
+            </div>
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4">
+                    <div class="nav w-100 nav-pills me-4">
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                            <i class="fa fa-car-side fa-2x me-3"></i>
+                            <h4 class="m-0">Dijagnostika</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
+                            <i class="fa fa-car fa-2x me-3"></i>
+                            <h4 class="m-0">Servis Motora</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
+                            <i class="fa fa-cog fa-2x me-3"></i>
+                            <h4 class="m-0">Priprema za Tehnički Pregled</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
+                            <i class="fa fa-oil-can fa-2x me-3"></i>
+                            <h4 class="m-0">Zamena Ulja</h4>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content w-100">
+                        <div class="tab-pane fade show active" id="tab-pane-1">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Profesionalna Dijagnostika Automobila</h3>
+                                    <p class="mb-4">Naš tim stručnjaka koristi najsavremeniju dijagnostičku opremu kako bismo brzo i tačno identifikovali problem sa vašim automobilom. Pružamo detaljne izveštaje i preporuke za dalje održavanje.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Savremena Dijagnostička Oprema</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Brza i Tačna Dijagnostika</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Detaljni Izveštaji</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-2">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Kompletan Servis Motora</h3>
+                                    <p class="mb-4">Naši iskusni mehaničari obavljaju sveobuhvatan servis motora vašeg automobila. Od redovnog održavanja do kompleksnih popravki, garantujemo kvalitetan rad i pouzdanost.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Redovno Održavanje Motora</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Popravka i Zamena Delova</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Iskusni Mehaničari</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-3">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Priprema za Tehnički Pregled</h3>
+                                    <p class="mb-4">Pripremimo vaš automobil za tehnički pregled. Proveravamo sve sisteme, osvetljenje, kočnice i druge važne komponente kako biste prošli pregled bez problema.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Provera Svih Sistema</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Kontrola Osvetljenja i Kočnica</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Garantovano Prolaženje</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-4">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Zamena Ulja i Filtera</h3>
+                                    <p class="mb-4">Redovna zamena motornog ulja i filtera je ključna za dugotrajnost vašeg automobila. Koristimo samo kvalitetna ulja i originalne filtere za optimalnu zaštitu motora.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Kvalitetna Motorna Ulja</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Originalni Filteri</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Brza i Efikasna Usluga</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Why Choose Us Start -->
+    <div id="why-choose-us" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">// Zašto Izabrati Nas //</h6>
+                <h1 class="mb-5">Prednosti Našeg Servisa</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-tools fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Savremena Oprema</h5>
+                        <p class="mb-0">Koristimo najnoviju dijagnostičku i servisnu opremu za preciznu dijagnostiku i kvalitetne popravke.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-certificate fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Garantija Kvaliteta</h5>
+                        <p class="mb-0">Sve naše usluge dolaze sa garancijom. Koristimo samo originalne i sertifikovane delove.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-clock fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Brza Usluga</h5>
+                        <p class="mb-0">Efikasno upravljanje vremenom i brza dijagnostika omogućavaju nam da završimo posao na vreme.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-dollar-sign fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Pristupačne Cene</h5>
+                        <p class="mb-0">Fer i transparentne cene bez skrivenih troškova. Najbolji odnos cene i kvaliteta u regionu.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-2">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-user-tie fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Iskusni Tehničari</h5>
+                        <p class="mb-0">Naš tim čine sertifikovani mehaničari sa višegodišnjim iskustvom u radu sa svim markama vozila.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-shield-alt fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Sigurnost i Pouzdanost</h5>
+                        <p class="mb-0">Vaša sigurnost je naš prioritet. Svi radovi se izvode po najvišim standardima bezbednosti.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-star fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Preko 1000+ Zadovoljnih Klijenata</h5>
+                        <p class="mb-0">Naša reputacija govori sama za sebe. Više od hiljadu zadovoljnih klijenata nam veruje svoje automobile.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="bg-light text-center p-4 h-100">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="fa fa-heart fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Posvećenost Klijentima</h5>
+                        <p class="mb-0">Više od 28 godina posvećeni smo zadovoljstvu naših klijenata i održavanju dugoročnih odnosa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why Choose Us End -->
+
+
+    <!-- Contact Start -->
+    <div id="contact" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">// Kontaktirajte Nas //</h6>
+                <h1 class="mb-5">Tu smo za sva vaša pitanja</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="bg-light d-flex flex-column justify-content-center p-4">
+                                <h5 class="text-uppercase">// Radno Vreme //</h5>
+                                <p class="m-0 mb-2"><i class="fa fa-clock text-primary me-2"></i><strong>Ponedeljak - Petak:</strong> 09:00 - 18:00</p>
+                                <p class="m-0 mb-2"><i class="fa fa-clock text-primary me-2"></i><strong>Subota:</strong> 09:00 - 15:00</p>
+                                <p class="m-0"><i class="fa fa-lock text-primary me-2"></i><strong>Nedelja:</strong> Zatvoreno</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-light d-flex flex-column justify-content-center p-4">
+                                <h5 class="text-uppercase">// Kontakt //</h5>
+                                <p class="m-0 mb-2"><i class="fa fa-phone text-primary me-2"></i><a href="tel:069717538" class="text-dark text-decoration-none">069717538</a></p>
+                                <p class="m-0"><i class="fa fa-map-marker-alt text-primary me-2"></i><a href="https://www.google.com/maps/search/?api=1&query=ĐAKONA+AVAKUMA+6,+32102,+ČAČAK,+Srbija" target="_blank" class="text-dark text-decoration-none">ĐAKONA AVAKUMA 6, 32102, ČAČAK, Srbija</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="https://www.google.com/maps?q=ĐAKONA+AVAKUMA+6,+32102,+ČAČAK,+Srbija&output=embed"
+                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                </div>
+                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="mb-4">Kontaktirajte nas direktno</h4>
+                    <p class="mb-4">Pošaljite nam poruku putem Viber ili WhatsApp-a</p>
+                    <div class="d-flex align-items-center justify-content-center gap-3" style="min-height: 200px;">
+                        <a href="viber://chat?number=+381669111978" class="btn btn-lg d-flex flex-column align-items-center justify-content-center text-white" style="width: 150px; height: 150px; background-color: #665CAC; border-radius: 15px;">
+                            <i class="bi bi-telephone-fill mb-2" style="font-size: 3rem;"></i>
+                            <span style="font-size: 1rem;">Viber</span>
+                        </a>
+                        <a href="https://wa.me/381669111978" target="_blank" class="btn btn-lg btn-success d-flex flex-column align-items-center justify-content-center" style="width: 150px; height: 150px; border-radius: 15px;">
+                            <i class="bi bi-chat-left-text-fill mb-2" style="font-size: 3rem;"></i>
+                            <span style="font-size: 1rem;">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Kontakt</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><a href="https://www.google.com/maps/search/?api=1&query=ĐAKONA+AVAKUMA+6,+32102,+ČAČAK,+Srbija" target="_blank" style="color: inherit; text-decoration: none;">ĐAKONA AVAKUMA 6, 32102, ČAČAK, Srbija</a></p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:069717538" style="color: inherit; text-decoration: none;">069717538</a></p>
+                    <p class="mb-3"><i class="fa fa-clock me-3"></i>Pon - Pet: 09:00 - 18:00</p>
+                    <p class="mb-3"><i class="fa fa-clock me-3"></i>Sub: 09:00 - 15:00</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social me-2" href="viber://chat?number=+381669111978" title="Viber">
+                            <i class="bi bi-telephone-fill"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/381669111978" target="_blank" title="WhatsApp">
+                            <i class="bi bi-chat-left-text-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">O Nama</h4>
+                    <p class="mb-0">NAJJ 1996 je auto servis sa dugogodišnjom tradicijom koja počinje još 1996. godine. Tokom preko 28 godina uspešnog rada, garantujemo kvalitet i pouzdanost u svakom koraku.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Usluge</h4>
+                    <a class="btn btn-link service-link" href="#service" data-service="1">Dijagnostika</a>
+                    <a class="btn btn-link service-link" href="#service" data-service="2">Servis Motora</a>
+                    <a class="btn btn-link service-link" href="#service" data-service="3">Priprema za Tehnički Pregled</a>
+                    <a class="btn btn-link service-link" href="#service" data-service="4">Zamena Ulja</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Brzi Linkovi</h4>
+                    <a class="btn btn-link" href="#home">Početna</a>
+                    <a class="btn btn-link" href="#about">O Nama</a>
+                    <a class="btn btn-link" href="#service">Usluge</a>
+                    <a class="btn btn-link" href="#why-choose-us">Zašto izabrati nas</a>
+                    <a class="btn btn-link" href="#contact">Kontakt</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">NAJJ 1996</a>, Sva Prava Zadržana.
+
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
