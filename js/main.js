@@ -54,32 +54,35 @@
     // Initiate the wowjs
     new WOW().init();
     
-    // Ensure navbar toggle works on mobile
+    // Ensure navbar toggle works on mobile - explicit Bootstrap initialization
     $(document).ready(function() {
-        // Make sure Bootstrap collapse is initialized
         var navbarCollapse = document.getElementById('navbarCollapse');
-        if (navbarCollapse) {
-            // Bootstrap should handle this automatically, but ensure it's not blocked
-            $(navbarCollapse).on('show.bs.collapse', function() {
-                // Menu is opening
-            });
-            $(navbarCollapse).on('hide.bs.collapse', function() {
-                // Menu is closing
+        var navbarToggler = document.querySelector('.navbar-toggler');
+        
+        if (navbarToggler && navbarCollapse) {
+            // Remove any existing event listeners that might block
+            $(navbarToggler).off('click');
+            
+            // Add explicit click handler
+            $(navbarToggler).on('click', function(e) {
+                e.stopPropagation();
+                var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                
+                if (!bsCollapse) {
+                    // Initialize if not already initialized
+                    bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                        toggle: false
+                    });
+                }
+                
+                // Toggle the collapse
+                if ($(navbarCollapse).hasClass('show')) {
+                    bsCollapse.hide();
+                } else {
+                    bsCollapse.show();
+                }
             });
         }
-        
-        // Ensure toggler button works
-        $('.navbar-toggler').on('click', function(e) {
-            // Don't prevent default - let Bootstrap handle it
-            // Just ensure the button is working
-            var target = $(this).data('bs-target');
-            if (target) {
-                var collapse = $(target);
-                if (collapse.length) {
-                    // Bootstrap will toggle it
-                }
-            }
-        });
     });
 
 
