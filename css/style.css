@@ -272,6 +272,18 @@ body {
         height: auto;
     }
     
+    /* Ensure navbar toggler is clickable */
+    .navbar-toggler {
+        pointer-events: auto !important;
+        z-index: 1051 !important;
+        cursor: pointer !important;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+    
     /* Set navbar height variable for hero calculation */
     :root {
         --navbar-height: 70px;
@@ -280,6 +292,12 @@ body {
     /* Ensure navbar doesn't exceed 70px when collapsed */
     .navbar:not(.show) {
         max-height: 70px;
+    }
+    
+    /* Ensure navbar collapse works */
+    .navbar-collapse {
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
     
     body {
