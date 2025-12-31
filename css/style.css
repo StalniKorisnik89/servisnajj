@@ -383,11 +383,21 @@ body {
         overflow: hidden !important;
     }
     
-    #home img {
+    #home > div > img {
         height: 100% !important;
         max-height: 100% !important;
         object-fit: cover;
         display: block !important;
+    }
+    
+    #home .car-headlights-wrapper {
+        max-height: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    #home .car-headlights-wrapper img {
+        max-height: 100% !important;
+        object-fit: contain !important;
     }
     
     #home .container {
