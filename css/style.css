@@ -120,6 +120,21 @@ body {
     right: 45px;
     bottom: 45px;
     z-index: 99;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.back-to-top i {
+    color: #FFFFFF !important;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.back-to-top:hover i {
+    color: #FFFFFF !important;
 }
 
 @media (max-width: 991.98px) {

@@ -54,18 +54,8 @@
     // Initiate the wowjs
     new WOW().init();
     
-    // Ensure navbar toggle works on mobile
-    $(document).on('click', '.navbar-toggler', function(e) {
-        // Don't prevent default - let Bootstrap handle it
-        var target = $(this).data('bs-target');
-        if (target) {
-            var navbarCollapse = $(target);
-            if (navbarCollapse.length) {
-                // Bootstrap will handle the toggle
-                // Just ensure it's not blocked
-            }
-        }
-    });
+    // Ensure navbar toggle works on mobile - don't interfere with Bootstrap
+    // Bootstrap handles the toggle automatically via data-bs-toggle attribute
 
 
     // Sticky Navbar
@@ -189,19 +179,19 @@
     });
     
     // Handle click on service tab buttons - scroll to content on mobile
-    $('.service .nav-link[data-bs-toggle="pill"]').on('click', function(e) {
+    $(document).on('shown.bs.tab', '.service .nav-link[data-bs-toggle="pill"]', function(e) {
         if (window.innerWidth < 992) {
             var targetTab = $(this).data('bs-target');
             if (targetTab) {
-                // Small delay to ensure tab content is visible
-                setTimeout(function() {
-                    var tabContent = $(targetTab);
-                    if (tabContent.length) {
+                var tabContent = $(targetTab);
+                if (tabContent.length) {
+                    // Scroll to the tab content, not to top
+                    setTimeout(function() {
                         $('html, body').stop().animate({
                             scrollTop: tabContent.offset().top - 120
                         }, 400);
-                    }
-                }, 100);
+                    }, 50);
+                }
             }
         }
     });
