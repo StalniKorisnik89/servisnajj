@@ -32,6 +32,12 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+          exclude-paths: |
+            .github
+            .git
+            READ-ME.txt
+            LICENSE.txt
+            CarServ.jpg
       
       - name: Deploy to GitHub Pages
         id: deployment
