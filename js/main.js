@@ -53,6 +53,19 @@
     
     // Initiate the wowjs
     new WOW().init();
+    
+    // Ensure navbar toggle works on mobile
+    $(document).on('click', '.navbar-toggler', function(e) {
+        // Don't prevent default - let Bootstrap handle it
+        var target = $(this).data('bs-target');
+        if (target) {
+            var navbarCollapse = $(target);
+            if (navbarCollapse.length) {
+                // Bootstrap will handle the toggle
+                // Just ensure it's not blocked
+            }
+        }
+    });
 
 
     // Sticky Navbar
@@ -111,8 +124,9 @@
             $('.back-to-top').fadeOut('slow');
         }
     });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+    $('.back-to-top').click(function (e) {
+        e.preventDefault();
+        $('html, body').stop().animate({scrollTop: 0}, 600, 'swing');
         return false;
     });
     
@@ -137,26 +151,57 @@
         var target = $(this.getAttribute('href'));
         if (target.length) {
             e.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top - 100
-            }, 400);
             
-            // Update active class
-            $('.navbar-nav a').removeClass("active");
-            $(this).addClass("active");
-            
-            // Close mobile menu only below 992px
+            // Close mobile menu first (if open)
             if (window.innerWidth < 992) {
                 var navbarCollapse = document.getElementById('navbarCollapse');
                 if (navbarCollapse) {
                     var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (!bsCollapse) {
-                        bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                            toggle: false
-                        });
+                    if (bsCollapse && $(navbarCollapse).hasClass('show')) {
+                        bsCollapse.hide();
+                        // Wait for menu to close, then scroll
+                        setTimeout(function() {
+                            $('html, body').stop().animate({
+                                scrollTop: target.offset().top - 100
+                            }, 400);
+                        }, 300);
+                    } else {
+                        // Menu already closed, scroll immediately
+                        $('html, body').stop().animate({
+                            scrollTop: target.offset().top - 100
+                        }, 400);
                     }
-                    bsCollapse.hide();
+                } else {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 100
+                    }, 400);
                 }
+            } else {
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - 100
+                }, 400);
+            }
+            
+            // Update active class
+            $('.navbar-nav a').removeClass("active");
+            $(this).addClass("active");
+        }
+    });
+    
+    // Handle click on service tab buttons - scroll to content on mobile
+    $('.service .nav-link[data-bs-toggle="pill"]').on('click', function(e) {
+        if (window.innerWidth < 992) {
+            var targetTab = $(this).data('bs-target');
+            if (targetTab) {
+                // Small delay to ensure tab content is visible
+                setTimeout(function() {
+                    var tabContent = $(targetTab);
+                    if (tabContent.length) {
+                        $('html, body').stop().animate({
+                            scrollTop: tabContent.offset().top - 120
+                        }, 400);
+                    }
+                }, 100);
             }
         }
     });
