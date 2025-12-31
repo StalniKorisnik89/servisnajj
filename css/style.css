@@ -90,10 +90,24 @@ body {
         filter: blur(1px) !important;
     }
     
+    /* Force icons in "Why Choose Us" section to stay white */
+    #why-choose-us .bg-primary i,
+    #why-choose-us .bg-primary .fa,
+    #why-choose-us .bg-primary [class*="fa-"] {
+        color: #FFFFFF !important;
+    }
+    
     /* Force all text to stay dark */
     p, span, div, a, h1, h2, h3, h4, h5, h6, small, strong {
         color: inherit !important;
     }
+}
+
+/* Ensure icons in "Why Choose Us" section are always white */
+#why-choose-us .bg-primary i,
+#why-choose-us .bg-primary .fa,
+#why-choose-us .bg-primary [class*="fa-"] {
+    color: #FFFFFF !important;
 }
 
 .fw-medium {
