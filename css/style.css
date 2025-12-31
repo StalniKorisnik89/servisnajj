@@ -19,6 +19,43 @@ body {
     --secondary: #0B2154;
     --light: #F2F2F2;
     --dark: #111111;
+    color-scheme: light;
+}
+
+/* Prevent dark mode from affecting colors */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #D81324 !important;
+        --secondary: #0B2154 !important;
+        color-scheme: light;
+    }
+    
+    body {
+        color-scheme: light;
+    }
+    
+    /* Ensure primary color stays red */
+    .text-primary,
+    .bg-primary,
+    .btn-primary,
+    .navbar-brand .text-primary,
+    h1 .text-primary,
+    h2 .text-primary,
+    h3 .text-primary,
+    h4 .text-primary,
+    h5 .text-primary,
+    h6 .text-primary {
+        color: #D81324 !important;
+    }
+    
+    .bg-primary {
+        background-color: #D81324 !important;
+    }
+    
+    .btn-primary {
+        background-color: #D81324 !important;
+        border-color: #D81324 !important;
+    }
 }
 
 .fw-medium {
@@ -580,14 +617,15 @@ body {
     width: 65px;
     height: 50px;
     border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5);
-    filter: blur(1px);
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%) !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5) !important;
+    filter: blur(1px) !important;
     pointer-events: none;
     z-index: 10;
     animation: headlights-blink 2s ease-in-out infinite;
-    border: none;
-    outline: none;
+    border: none !important;
+    outline: none !important;
+    color-scheme: light;
 }
 
 .headlight-left {
@@ -607,11 +645,15 @@ body {
         opacity: 0.3;
         transform: translate(-50%, -50%) rotate(35deg) scale(0.8);
         filter: blur(1px);
+        background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%) !important;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5) !important;
     }
     50% {
         opacity: 1;
         transform: translate(-50%, -50%) rotate(35deg) scale(1.2);
         filter: blur(0.5px);
+        background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%) !important;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.8), 0 0 120px rgba(255, 255, 255, 0.6) !important;
     }
 }
 
@@ -624,11 +666,15 @@ body {
         opacity: 0.3;
         transform: translate(50%, -50%) rotate(-35deg) scale(0.8);
         filter: blur(1px);
+        background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%) !important;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5) !important;
     }
     50% {
         opacity: 1;
         transform: translate(50%, -50%) rotate(-35deg) scale(1.2);
         filter: blur(0.5px);
+        background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%) !important;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.8), 0 0 120px rgba(255, 255, 255, 0.6) !important;
     }
 }
 
