@@ -1,6 +1,45 @@
 (function ($) {
     "use strict";
 
+    // Force light mode - prevent dark mode
+    (function() {
+        // Set color-scheme immediately
+        if (document.documentElement) {
+            document.documentElement.style.colorScheme = 'light';
+            document.documentElement.setAttribute('data-color-scheme', 'light');
+        }
+        if (document.body) {
+            document.body.style.colorScheme = 'light';
+        }
+        
+        // Override any dark mode styles
+        var style = document.createElement('style');
+        style.textContent = `
+            html, body {
+                color-scheme: light only !important;
+            }
+            :root {
+                color-scheme: light only !important;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Monitor for any changes
+        var observer = new MutationObserver(function(mutations) {
+            if (document.documentElement) {
+                document.documentElement.style.colorScheme = 'light';
+            }
+            if (document.body) {
+                document.body.style.colorScheme = 'light';
+            }
+        });
+        
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['style', 'class']
+        });
+    })();
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {

@@ -22,39 +22,77 @@ body {
     color-scheme: light;
 }
 
+/* Force light mode - prevent dark mode from affecting colors */
+html {
+    color-scheme: light only !important;
+}
+
+body {
+    color-scheme: light only !important;
+    background-color: #FFFFFF !important;
+    color: #111111 !important;
+}
+
 /* Prevent dark mode from affecting colors */
 @media (prefers-color-scheme: dark) {
-    :root {
-        --primary: #D81324 !important;
-        --secondary: #0B2154 !important;
-        color-scheme: light;
+    html {
+        color-scheme: light only !important;
     }
     
     body {
-        color-scheme: light;
+        color-scheme: light only !important;
+        background-color: #FFFFFF !important;
+        color: #111111 !important;
     }
     
-    /* Ensure primary color stays red */
+    :root {
+        --primary: #D81324 !important;
+        --secondary: #0B2154 !important;
+        color-scheme: light only !important;
+    }
+    
+    /* Force all primary color elements to stay red */
     .text-primary,
     .bg-primary,
     .btn-primary,
     .navbar-brand .text-primary,
+    .navbar-brand h2.text-primary,
     h1 .text-primary,
     h2 .text-primary,
     h3 .text-primary,
     h4 .text-primary,
     h5 .text-primary,
-    h6 .text-primary {
+    h6 .text-primary,
+    .text-primary.text-uppercase,
+    .nav-link.active,
+    .service .nav .nav-link.active,
+    .service .nav .nav-link.active h4,
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
         color: #D81324 !important;
     }
     
-    .bg-primary {
-        background-color: #D81324 !important;
-    }
-    
-    .btn-primary {
+    .bg-primary,
+    .btn-primary,
+    .service .nav .nav-link.active,
+    .back-to-top {
         background-color: #D81324 !important;
         border-color: #D81324 !important;
+    }
+    
+    /* Force headlights to stay white */
+    .headlight,
+    .headlight-left,
+    .headlight-right {
+        background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, transparent 75%) !important;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5) !important;
+        filter: blur(1px) !important;
+    }
+    
+    /* Force all text to stay dark */
+    p, span, div, a, h1, h2, h3, h4, h5, h6, small, strong {
+        color: inherit !important;
     }
 }
 
