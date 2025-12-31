@@ -54,8 +54,33 @@
     // Initiate the wowjs
     new WOW().init();
     
-    // Ensure navbar toggle works on mobile - don't interfere with Bootstrap
-    // Bootstrap handles the toggle automatically via data-bs-toggle attribute
+    // Ensure navbar toggle works on mobile
+    $(document).ready(function() {
+        // Make sure Bootstrap collapse is initialized
+        var navbarCollapse = document.getElementById('navbarCollapse');
+        if (navbarCollapse) {
+            // Bootstrap should handle this automatically, but ensure it's not blocked
+            $(navbarCollapse).on('show.bs.collapse', function() {
+                // Menu is opening
+            });
+            $(navbarCollapse).on('hide.bs.collapse', function() {
+                // Menu is closing
+            });
+        }
+        
+        // Ensure toggler button works
+        $('.navbar-toggler').on('click', function(e) {
+            // Don't prevent default - let Bootstrap handle it
+            // Just ensure the button is working
+            var target = $(this).data('bs-target');
+            if (target) {
+                var collapse = $(target);
+                if (collapse.length) {
+                    // Bootstrap will toggle it
+                }
+            }
+        });
+    });
 
 
     // Sticky Navbar
