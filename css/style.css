@@ -646,6 +646,10 @@ body {
     color: #FFFFFF !important;
 }
 
+.service .nav .nav-link.active i {
+    color: #FFFFFF !important;
+}
+
 
 /*** Team ***/
 .team-item .team-overlay {
